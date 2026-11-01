@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    let number = prompt('정수를 입력하세요');
+    if( number >= 80 ) {
+        alert('A입니다');
+    }
+    else if (number >= 60) {
+        alert('B입니다');
+    }
+    else if (number >= 40) {
+        alert('C입니다');
+    }
+    else if (number >= 20) {
+        alert('D입니다');
+    }
+    else {
+        alert('F입니다');
+    }
+
+    switch( parsInt(number/10)) {
+        case 9:
+            alert('A입니다');
+            break;
+        case 8:
+            alert('B입니다');
+            break;
+        case 7:
+            alert('C입니다');
+            break;
+        case 6:
+            alert('D입니다');
+            break;
+        default:
+            alert('F입니다');   
+    }
+    switch( true ) {
+        case number >= 80:
+            alert('A입니다');
+            break;
+        case number >= 60:
+            alert('B입니다');
+            break;
+        case number >= 40:
+            alert('C입니다');
+            break;
+        case number >= 20:
+            alert('D입니다');
+            break;
+        default:
+            alert('F입니다');   
+    }
+</script>
+<body>
+    <h1>JS 조건문</h1>
+    <hr>
+    <h1>JS 반복분</h1>
+    <script>
+        let num = 1;
+        while( num <= number ) {
+            document.write(num + '<br>');
+            num++;
+        }
+        let sum = 0;
+        let i = 1;
+        while( i <= 100 ) {
+            sum = sum + i;
+            i++;
+        }
+        document.write(sum + '<br>');
+
+    </script>
+</body>
+</html>
