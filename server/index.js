@@ -13,9 +13,21 @@ const server = http.createServer((req, res)=>{
     //응답 본문
     //res.write('Hello, node! !');
     //res.end(); //응답 종료
-    res.setHeader('Content-Type', 'text/html');
-    const readStream = fs.createReadStream(__dirname+"/index.html", "utf8");
-    readStream.pipe(res);
+    //res.setHeader('Content-Type', 'text/html');
+    //const readStream = fs.createReadStream(__dirname+"/index.html", "utf8");
+    //readStream.pipe(res);
+    res.setHeader('Content-Type', 'text/plain');
+    const {method, url} = req;
+    if( method === 'GET' && url === '/home'){
+        res.statusCode = 200;
+        res.end("HOME");
+    } else if(method === 'GET' && url === '/about'){
+        res.statusCode = 200;
+        res.end("ABOUT");
+    } else {
+        res.statusCode = 404;
+        res.end("NOT FOUND");
+    }
 });
 
 server.listen(PORT, ()=>{
